@@ -7,10 +7,10 @@ Python bindings, and all necessary prerequisites for:
 3. Maya on macOS
 4. macOS, using Homebrew
 
-Only thewindows version is working for now
+Only the windows version is working for now
 
 
-Building USD on Windows
+Building Alembic on Windows
 -----------------------
 Note that the windows build is a work in progress, and the
 branch may not yet be in a buildable state.
