@@ -21,6 +21,7 @@ cd build\alembic_softimage
 
 cmake  -G "Visual Studio 14 2015" -A x64^
     -DALEMBIC_LIB_USES_BOOST=ON^
+    -DUSE_STATIC_BOOST=ON^
     -DBOOST_INCLUDEDIR="%current%\local\include"^
     -DBOOST_LIBRARYDIR="%current%\local\lib"^
     -DBoost_INCLUDE_DIR="%current%\local\include"^
