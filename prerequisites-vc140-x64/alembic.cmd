@@ -9,7 +9,7 @@ cd prereq
 echo "Retrieving Alembic at version 1.6.1 for compatibility"
 
 if not exist "alembic/.git/config" ^
-git clone https://github.com/alembic/alembic.git
+git clone https://github.com/hybridetech/alembic.git
 
 cd alembic
 git pull
@@ -29,7 +29,7 @@ cmake  -G "Visual Studio 14 2015" -A x64^
     -DCMAKE_PREFIX_PATH="%current%\local"^
     -DCMAKE_INSTALL_PREFIX="%current%\local"^
     -DUSE_PYILMBASE=1 -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=alembic-stage^
-    -DALEMBIC_LIB_USES_BOOST=ON^
+    -DALEMBIC_LIB_USES_BOOST=OFF^
     -DUSE_STATIC_BOOST=ON^
 	-DBOOST_INCLUDEDIR="%current%\local\include"^
 	-DBOOST_LIBRARYDIR="%current%\local\lib"^
@@ -38,11 +38,14 @@ cmake  -G "Visual Studio 14 2015" -A x64^
     -DUSE_STATIC_HDF5=ON^
     -DUSE_HDF5=ON^
 	-DHDF5_ROOT="%current%\local"^
-	-DALEMBIC_PYILMBASE_PYIMATH_LIB="%current%\local\lib\libPyImath.lib"^
+    -DUSE_PYALEMBIC=ON^
+	-DALEMBIC_PYILMBASE_PYIMATH_LIB="%current%\local\lib\PyImath.lib"^
+    -DALEMBIC_PYILMBASE_INCLUDE_DIRECTORY="%current%\local\include"^
+    -DALEMBIC_PYIMATH_MODULE_DIRECTORY="%current%\local\lib"^
 	-DILMBASE_ROOT="%current%\local"^
 	-DALEMBIC_PYILMBASE_ROOT="%current%\local"^
 	../../alembic
 
-cmake --build . --target install --config Release -- /maxcpucount:8
+cmake --build . --target install --config MinSizeRel -- /maxcpucount:8
 
 cd %current%
