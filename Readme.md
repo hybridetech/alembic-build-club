@@ -1,5 +1,5 @@
 
-This project includes recipes to build Pixar's Universal Scene Description, it's
+This project based on https://github.com/vfxpro99/usd-build-club includes recipes to build ILM's Alembic, it's
 Python bindings, and all necessary prerequisites for:
 
 1. macOS
@@ -7,29 +7,18 @@ Python bindings, and all necessary prerequisites for:
 3. Maya on macOS
 4. macOS, using Homebrew
 
-The Linux scripts are still work in progress.
+Only the windows version is working for now
 
 
-Building USD on Windows
+Building Alembic on Windows
 -----------------------
 Note that the windows build is a work in progress, and the
 branch may not yet be in a buildable state.
 
 Prereqs:
  1. Install Python 2.7 and Pip. When using the python.msi installer, installing pip, and putting Python in %PATH% are both options that should be selected.
- 1. pip install PySide
- 1. pip install pyd (unclear if this is necessary or not)
- 1. pip install pyopengl (required for usdview)
  1. Ensure PySide tools (in python27/scripts) are visible on %PATH%. pip probably put it there already.
  1. Install CMake and make sure its on your %PATH%
- 1. Install NASM from http://www.nasm.us/. Make sure it's on your %PATH% in the working terminal
- 1. Install 7-Zip, make sure 7z is on your %PATH% in the working terminal
- 1. Download & unzip win-flex and bison from https://sourceforge.net/projects/winflexbison/, put them in the %PATH%.
-
-Qt is no longer required for a build of USD, or usdview. PySide is sufficient, so the next two steps can be omitted.
-
- 1. Download Qt via the binary installer, default install works at the time of this writing
- 1. Ensure qmake.exe is on the %PATH% in the working terminal
 
 Run the commands below in a **64-bit VS2015** Developer command prompt.
 
