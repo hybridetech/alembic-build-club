@@ -28,7 +28,7 @@ cmake  -G "Visual Studio 14 2015" -A x64^
     -DALEMBIC_ILMBASE_LINK_STATIC:BOOL=TRUE ^
     -DCMAKE_PREFIX_PATH="%current%\local"^
     -DCMAKE_INSTALL_PREFIX="%current%\local"^
-    -DUSE_PYILMBASE=1 -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=alembic-stage^
+    -DUSE_PYILMBASE=ON -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=alembic-stage^
     -DALEMBIC_LIB_USES_BOOST=OFF^
     -DUSE_STATIC_BOOST=ON^
 	-DBOOST_INCLUDEDIR="%current%\local\include"^
@@ -41,11 +41,11 @@ cmake  -G "Visual Studio 14 2015" -A x64^
     -DUSE_PYALEMBIC=ON^
 	-DALEMBIC_PYILMBASE_PYIMATH_LIB="%current%\local\lib\PyImath.lib"^
     -DALEMBIC_PYILMBASE_INCLUDE_DIRECTORY="%current%\local\include"^
-    -DALEMBIC_PYIMATH_MODULE_DIRECTORY="%current%\local\lib"^
+    -DALEMBIC_PYIMATH_MODULE_DIRECTORY="%current%\local\lib\python2.7\site-packages"^
 	-DILMBASE_ROOT="%current%\local"^
 	-DALEMBIC_PYILMBASE_ROOT="%current%\local"^
 	../../alembic
 
-cmake --build . --target install --config MinSizeRel -- /maxcpucount:8
+cmake --build . --target install --config Release -- /maxcpucount:8
 
 cd %current%

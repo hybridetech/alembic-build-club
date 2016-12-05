@@ -7,6 +7,7 @@ call ..\alembic-build-club\prerequisites-vc140-x64\zlib.cmd
 call ..\alembic-build-club\prerequisites-vc140-x64\hdf5.cmd
 call ..\alembic-build-club\prerequisites-vc140-x64\boost.cmd
 call ..\alembic-build-club\prerequisites-vc140-x64\openexr.cmd
+call ..\alembic-build-club\prerequisites-vc140-x64\pyIlmBase.cmd
 call ..\alembic-build-club\prerequisites-vc140-x64\alembic.cmd
 call ..\alembic-build-club\prerequisites-vc140-x64\softimage.cmd
 
